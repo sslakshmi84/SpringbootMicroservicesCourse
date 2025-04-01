@@ -1,0 +1,19 @@
+services:
+  catalog-db:
+    image: mysql:8.0
+    container_name: catalog-db
+    environment:
+      - MYSQL_ROOT_PASSWORD="Tech@2024!"
+      - MYSQL_DATABASE=testdb
+      - MYSQL_USER=root
+    ports:
+      - "15432:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-pTech@2024!"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          memory: 500m
