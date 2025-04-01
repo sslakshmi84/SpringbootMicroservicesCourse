@@ -33,7 +33,7 @@ import com.sivalabs.bookstore.catalog.domain.ProductService;
 	
 	@GetMapping("/{code}")
 	ResponseEntity<Product> getProductByCode(@PathVariable String code){
-	   System.out.println("in test");
+	   
 		return productService.getProductByCode(code).map(entity->ResponseEntity.ok(entity))
 		.orElseThrow(() -> ProductNotFoundException.forCode(code));
 		
