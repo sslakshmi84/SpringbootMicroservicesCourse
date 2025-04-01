@@ -5,7 +5,7 @@ on:
     paths:
       - catalog-service/**
     branches:
-      - 'main'
+      - 'master'
   pull_request:
     branches: [master]
 
