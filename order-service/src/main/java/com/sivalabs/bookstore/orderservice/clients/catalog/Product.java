@@ -1,11 +1,5 @@
-/**
- *
- */
-package com.sivalabs.bookstore.catalog.domain;
+package com.sivalabs.bookstore.orderservice.clients.catalog;
 
 import java.math.BigDecimal;
 
-/**
- *
- */
 public record Product(String code, String name, String description, String imageUrl, BigDecimal price) {}

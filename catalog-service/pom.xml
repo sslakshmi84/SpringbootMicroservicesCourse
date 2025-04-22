@@ -55,7 +55,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-mysql</artifactId>
+			<artifactId>flyway-database-postgresql</artifactId>
 		</dependency>
 
 		<dependency>
@@ -84,8 +84,8 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>com.mysql</groupId>
-			<artifactId>mysql-connector-j</artifactId>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
@@ -115,7 +115,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.testcontainers</groupId>
-			<artifactId>mysql</artifactId>
+			<artifactId>postgresql</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -161,7 +161,7 @@
 					</includeOnlyProperties>
 				</configuration>
 			</plugin>
-			<!--			<plugin>
+						<plugin>
 				<groupId>com.diffplug.spotless</groupId>
 				<artifactId>spotless-maven-plugin</artifactId>
 				<version>${spotless-maven-plugin.version}</version>
@@ -183,16 +183,16 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>-->
+			</plugin>
 			<plugin>
 				<groupId>org.flywaydb</groupId>
 				<artifactId>flyway-maven-plugin</artifactId>
 				<version>10.20.1</version>
 				<configuration>
 				<cleanDisabled>false</cleanDisabled>
-					<url>jdbc:mysql://localhost:3306/test_schema</url>
-					<user>root</user>
-					<password>Tech@2024!</password>
+					<url>jdbc:postgresql://localhost:15432/postgres</url>
+					<user>postgres</user>
+					<password>postgres</password>
 				</configuration>
 			</plugin>
 		</plugins>
